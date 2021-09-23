@@ -206,4 +206,147 @@
 }
 
 
+
+
+
+
+
+
+.footer {
+  background-color: $dark-800;
+  padding-top: 30px;
+  @extend %sans-400;
+  font-size: 14px;
+  color: $white;
+  &-logo {
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+
+.footer-top {
+  border-bottom: 1px solid rgba($white, 0.1);
+  padding-bottom: 30px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__form {
+    max-width: 320px;
+    width: 100%;
+    margin-right: 100px;
+    label {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 18px;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 6px 0 0 6px;
+      max-width: 180px;
+      width: 100%;
+    }
+
+    input:focus {
+        border-color: $green-900;
+        box-shadow: 0 0 0 3px $green-200;
+        outline: transparent;
+    }
+
+    input::placeholder {
+      color: $input-color;
+      line-height: 1.1;
+    }
+
+    button {
+      text-transform: uppercase;
+      background-color: $green-900;
+      padding: 12px 10px 12px 14px;
+      border-radius: 0 6px 6px 0;
+      transition: background-color .5s;
+    }
+
+    button:hover {
+      background-color: $btn-hover;
+    }
+
+    button:active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: rgba($white, 0.5);
+      background-color: $green-900;
+    }
+
+    button:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      outline: transparent;
+    }
+  }
+
+  &__menu {    
+    max-width: 130px;
+    width: 100%;
+  }
+
+  &__menu-item:not(:last-child) {
+    margin-bottom: 18px;
+  }
+
+  &__menu-link {
+    transition: opacity .5s;
+  }
+
+  &__menu-link:hover {
+    opacity: 0.5;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column
+  }
+
+  &__contact-link {
+    margin-bottom: 18px;
+    transition: opacity .5s;
+  }
+
+  &__contact-link:hover {
+    opacity: 0.5;
+  }
+
+  &__contact-list {
+    display: flex;
+  }
+
+  &__contact-item:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  &__contact-item {
+    transition: opacity .5s;
+  }
+
+  &__contact-item:hover {
+    opacity: 0.5;
+  }
+}
+
+.footer-bottom {
+  padding: 24px 0;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__images {
+    display: flex;
+    img:not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+}
+
+
 @import 'media';
