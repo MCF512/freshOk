@@ -1,9 +1,9 @@
 $(function () {
-  $('.top-slider__inner').slick({
+  $('.slider__inner').slick({
     arrows: true,
-    nextArrow: '<img class="slick-arrow next" src="../images/icons/slick-arrow.svg">',
-    prevArrow: '<img class="slick-arrow prev" src="../images/icons/slick-arrow.svg">'
+    nextArrow: '<button class="slider__arrow slider__arrow--next"></button>',
+    prevArrow: '<button class="slider__arrow slider__arrow--prev"></button>'
   });
 
-  var mixer = mixitup('.top-products__content');
+  var mixer = mixitup('.carts__list');
 });
