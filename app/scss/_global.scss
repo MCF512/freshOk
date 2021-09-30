@@ -4,7 +4,8 @@ body {
 }
 
 body {
-  @extend %sans-400;
+  font-family: 'OpenSans';
+  font-weight: 400;
   color: $dark-500;
   font-size: 14px;
   line-height: 1.4;
@@ -23,7 +24,8 @@ body {
 }
 
 .title {
-  @extend %ruda-600;
+  font-family: 'Ruda';
+  font-weight: 600;
   font-size: 32px;
   line-height: 1.4;
   letter-spacing: 3%;
