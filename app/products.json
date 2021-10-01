@@ -1,0 +1,98 @@
+{
+  "1": {
+    "name": "Ананас, 1кг",
+    "cost": "999 ₽",
+    "cost__class": "cards__price--old",
+    "cost__old": "1999 ₽",
+    "image": "images/pineapple.jpg",
+    "class": "fruits",
+    "info1": "new",
+    "info__text1": "новинка",
+    "info2": "sale__bottom",
+    "info__text2": "-50%"
+  },
+  "2": {
+    "name": "Лимон, 1кг",
+    "cost": "199 ₽",
+    "cost__class": "cards__price--transparent",
+    "cost__old": "",
+    "image": "images/lemon.jpg",
+    "class": "fruits",
+    "info1": "",
+    "info__text1": "",
+    "info2": "",
+    "info__text2": ""
+  },
+  "3": {
+    "name": "Питахайя красная с белой мякотью, 1шт",
+    "cost": "1019 ₽",
+    "cost__class": "cards__price--transparent",
+    "cost__old": "",
+    "image": "images/thai.jpg",
+    "class": "fruits",
+    "info1": "hit",
+    "info__text1": "хит",
+    "info2": "",
+    "info__text2": ""
+  },
+  "4": {
+    "name": "Перец оранжевый, 1кг",
+    "cost": "349 ₽",
+    "cost__class": "cards__price--transparent",
+    "cost__old": "",
+    "image": "images/pepper.jpg",
+    "class": "vegetables",
+    "info1": "new",
+    "info__text1": "новинка",
+    "info2": "",
+    "info__text2": ""
+  },
+  "5": {
+    "name": "Морковь молодая с бабушкиной грядки, 1кг",
+    "cost": "49 ₽",
+    "cost__class": "cards__price--transparent",
+    "cost__old": "1999 ₽",
+    "image": "images/carrot.jpg",
+    "class": "vegetables",
+    "info1": "hit",
+    "info__text1": "хит",
+    "info2": "",
+    "info__text2": ""
+  },
+  "6": {
+    "name": "Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...",
+    "cost": "199 ₽",
+    "cost__class": "cards__price--old",
+    "cost__old": "299 ₽",
+    "image": "images/sanpelligrino.jpg",
+    "class": "drinks",
+    "info1": "sale",
+    "info__text1": "-30%",
+    "info2": "",
+    "info__text2": ""
+  },
+  "7": {
+    "name": "Кофе с коноплей органический Caffé Salomoni 250г",
+    "cost": "977 ₽",
+    "cost__class": "cards__price--transparent",
+    "cost__old": "1999 ₽",
+    "image": "images/coffee.jpg",
+    "class": "grocery",
+    "info1": "new",
+    "info__text1": "новинка",
+    "info2": "",
+    "info__text2": ""
+  },
+  "8": {
+    "name": "Кетчуп томатный детский органический Bio-Zentrale 500мл",
+    "cost": "600 ₽",
+    "cost__class": "cards__price--transparent",
+    "cost__old": "",
+    "image": "images/ketchup.jpg",
+    "class": "grocery",
+    "info1": "",
+    "info__text1": "",
+    "info2": "",
+    "info__text2": ""
+  }
+}

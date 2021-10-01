@@ -537,9 +537,13 @@
     }
   }
   
-  &__favourite {
-    display: block;
+  &__favorite {
     margin-left: auto;
+    max-width: 44px;
+
+    &--img:hover {
+      margin-left: 1;
+    }
 
     path {
       transition: fill .5s;
@@ -638,6 +642,10 @@
         margin-right: 24px;
       }
 
+    }
+
+    &--transparent {
+      display: none;
     }
 
 
