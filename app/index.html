@@ -51,7 +51,73 @@
           <img src="images/icons/logo.svg" alt="logo">
         </a>
 
-        <button class="header__btn header__btn--catalog">Каталог продуктов</button>
+        <div class="catalog">
+          <button class="catalog__btn">Каталог продуктов</button>
+          <ul class="catalog__list">
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Овощи и фрукты
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Бакалея
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Молочные продукты
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Хлеб
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Мясо
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Колбаса
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Рыба
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Алкоголь
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Напитки
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Торты
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Мясо
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a class="catalog__link" href="#">
+                Чай, кофе
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
         <form class="header__form" action="#">
           <input class="header__input" type="search" placeholder="Найти в магазине ..."><span></span>
           <button class="header__btn header__btn--search" type="submit">поиск</button>
@@ -64,18 +130,20 @@
           </li>
           <li class="header__icon header__icon--favourite">
             <a class="header__link" href="#">
-              <div class="header__number">12</div>
+              <div class="header__number header__number--favorite">12</div>
             </a>
           </li>
           <li class="header__icon header__icon--cart">
-            <a class="header__link" href="#">
-              <div class="header__number">12</div>
-            </a>
+            <button class="header__link header__cart" href="#">
+              <div class="header__number header__number--cart"></div>
+            </button>
           </li>
         </ul>
       </div>
     </div>
   </header>
+
+  <div class="cart"></div>
 
   <main class="main">
     <section class="slider">

@@ -1,9 +1,13 @@
+let cart = {}; //корзина
+
 $(function () {
   loadProducts();
+  checkCart();
 
   var containerEl1 = document.querySelector('[data-ref="mix1"]');
-  var containerEl2 = document.querySelector('[data-ref="mix2"]');
+  // var containerEl2 = document.querySelector('[data-ref="mix2"]');
 
+  mixer.filter('.fruits');
   var config = {
     controls: {
       scope: 'local'
@@ -11,7 +15,7 @@ $(function () {
   };
 
   var mixer1 = mixitup(containerEl1, config);
-  var mixer1 = mixitup(containerEl2, config);
+  // var mixer1 = mixitup(containerEl2, config);
 });
 
 $('.slider__inner').slick({
@@ -38,11 +42,80 @@ function loadProducts() {
       out += '</a>';
       out += '<div class="cards__bottom">';
       out += '<p class="cards__price">' + '<span class="' + data[key]['cost__class'] + '">' + data[key]['cost__old'] + '</span>' + data[key]['cost'] + '</p>';
-      out += '<button class="cards__btn"></button>';
+      out += '<button class="cards__btn" data-art="' + key + '"></button>';
       out += '</div>';
       out += '</li>';
     }
 
     $('.cards__list').html(out);
+    $('.cards__btn').on('click', addToCart);
   })
 }
+
+function addToCart() {
+  //добовляю товары в корзину
+  let articul = $(this).attr('data-art');
+  if (cart[articul] != undefined) {
+    cart[articul]++;
+  }
+  else {
+    cart[articul] = 1;
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  //console.log(cart);
+}
+showMiniCart();
+function checkCart() {
+  //проверяю наличие корзины в locolStorage;
+  // console.log(localStorage.getItem('dddsfsf'));
+  if (localStorage.getItem('cart') != null) {
+    cart = JSON.parse(localStorage.getItem('cart'));
+  }
+}
+
+function showMiniCart() {
+  //показывает содержимое корзины
+  let out = '';
+  for (let key in cart) {
+    out += cart[key];
+  }
+  $('.header__number--cart').html(out);
+  $('.cart').html(out);
+}
+
+$(function () {
+  $('.header__icon--cart').on('click', function () {
+    $('.cart').toggleClass('cart--active');
+    $('body').toggleClass('body--fixed');
+  });
+
+  $('.catalog__btn').on('click', function () {
+    $('.catalog__list').toggleClass('catalog__list--active');
+    $('.catalog__btn').toggleClass('catalog__btn--active');
+  });
+
+  $('.catalog__btn').on('mouseover', function () {
+    $('.catalog__list').addClass('catalog__list--active');
+    $('.catalog__btn').addClass('catalog__btn--active');
+  });
+
+  $('.catalog__btn').on('mouseout', function () {
+    $('.catalog__list').removeClass('catalog__list--active');
+    $('.catalog__btn').removeClass('catalog__btn--active');
+  });
+
+  $('.catalog__list').on('mouseover', function () {
+    $('.catalog__list').addClass('catalog__list--active');
+    $('.catalog__btn').addClass('catalog__btn--active');
+  });
+
+  $('.catalog__list').on('mouseout', function () {
+    $('.catalog__list').removeClass('catalog__list--active');
+    $('.catalog__btn').removeClass('catalog__btn--active');
+  });
+
+});
+
+// function cartActive() {
+//   $('.cart').addClass('.cart--active');
+// }
