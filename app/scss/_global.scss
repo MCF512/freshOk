@@ -12,14 +12,6 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-
-  &--fixed {
-    overflow: hidden;
-  }
-}
-
-.body--fixed {
-  overflow: hidden;
 }
 
 .main {

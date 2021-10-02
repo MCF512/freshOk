@@ -2,19 +2,21 @@ let cart = {}; //корзина
 
 $(function () {
   loadProducts();
+  showCart();
   checkCart();
+  showMiniCart();
 
-  var containerEl1 = document.querySelector('[data-ref="mix1"]');
+  // var containerEl1 = document.querySelector('[data-ref="mix1"]');
   // var containerEl2 = document.querySelector('[data-ref="mix2"]');
 
-  mixer.filter('.fruits');
-  var config = {
-    controls: {
-      scope: 'local'
-    }
-  };
+  // mixer.filter('.fruits');
+  // var config = {
+  //   controls: {
+  //     scope: 'local'
+  //   }
+  // };
 
-  var mixer1 = mixitup(containerEl1, config);
+  //var mixer1 = mixitup(containerEl1, config);
   // var mixer1 = mixitup(containerEl2, config);
 });
 
@@ -27,7 +29,8 @@ $('.slider__inner').slick({
 function loadProducts() {
   //загружаю товары на страницу
   $.getJSON('products.json', function (data) {
-    //console.log(data);
+    // console.log(cart);
+    //вывод товаров в список
     let out = '';
     for (let key in data) {
       out += '<li class="cards__item mix ' + data[key]['class'] + '">';
@@ -41,16 +44,78 @@ function loadProducts() {
       out += '<p class="cards__name">' + data[key]['name'] + '</p>';
       out += '</a>';
       out += '<div class="cards__bottom">';
-      out += '<p class="cards__price">' + '<span class="' + data[key]['cost__class'] + '">' + data[key]['cost__old'] + '</span>' + data[key]['cost'] + '</p>';
+      out += '<p class="cards__price">' + '<span class="' + data[key]['cost__class'] + '">' + data[key]['cost__old'] + ' ₽</span>' + data[key]['cost'] + ' ₽</p>';
       out += '<button class="cards__btn" data-art="' + key + '"></button>';
       out += '</div>';
       out += '</li>';
     }
-
     $('.cards__list').html(out);
     $('.cards__btn').on('click', addToCart);
   })
 }
+
+function showCart() {
+  $.getJSON('products.json', function (data) {
+    if ($.isEmptyObject(cart)) {
+      //корзина пуста
+      let out = '<p class="cart__empty">Ваша корзина пуста</p>';
+      $('#cart__content').html(out);
+    }
+
+    else {
+      let out = '';
+      for (let key in cart) {
+        out += '<div class="cart__item">';
+        out += '<img class="cart__img" src="' + data[key]['image'] + '">';
+        out += '<div class="cart__info">';
+        out += '<p class="cart__name">' + data[key]['name'] + '</p>';
+        out += '<p class="cart__price">' + data[key]['cost'] + '₽</p>';
+        out += '</div>';
+        out += '<div class="cart__lots">';
+        out += '<button class="cart__count cart__count--minus" data-art="' + key + '"></button>';
+        out += '<p class="cart__number">' + cart[key] + '</p>';
+        out += '<button class="cart__count cart__count--plus" data-art="' + key + '"></button>';
+        out += '<p class="cart__total">' + cart[key] * data[key]['cost'] + '₽</p>';
+        out += '</div>';
+        out += '<button class="cart__delete" data-art="' + key + '"></button>';
+        out += '</div>'
+      }
+      $('#cart__content').html(out);
+      $('.cart__count--plus').on('click', plusProducts);
+      $('.cart__count--minus').on('click', minusProducts);
+      $('.cart__delete').on('click', deleteProducts);
+    }
+  })
+}
+
+function plusProducts() {
+  let articul = $(this).attr('data-art');
+  cart[articul]++;
+  saveCartToLS();
+  showCart();
+}
+
+function minusProducts() {
+  let articul = $(this).attr('data-art');
+  if (cart[articul] > 1) {
+    cart[articul]--;
+  }
+  else {
+    delete cart[articul]
+  };
+  saveCartToLS();
+  showCart();
+}
+
+function deleteProducts() {
+  let articul = $(this).attr('data-art');
+  delete cart[articul];
+  saveCartToLS();
+  showCart();
+}
+
+
+
 
 function addToCart() {
   //добовляю товары в корзину
@@ -63,8 +128,8 @@ function addToCart() {
   }
   localStorage.setItem('cart', JSON.stringify(cart));
   //console.log(cart);
+  showCart();
 }
-showMiniCart();
 function checkCart() {
   //проверяю наличие корзины в locolStorage;
   // console.log(localStorage.getItem('dddsfsf'));
@@ -80,13 +145,34 @@ function showMiniCart() {
     out += cart[key];
   }
   $('.header__number--cart').html(out);
-  $('.cart').html(out);
+  // $('.cart__content').html(out);
+  // $('.cart').html(out);
 }
 
+function saveCartToLS() {
+  //сохранение корзины в local storage
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+
+
+
+
+
+
+
+
+
+
 $(function () {
-  $('.header__icon--cart').on('click', function () {
+  $('.header__cart').on('click', function () {
     $('.cart').toggleClass('cart--active');
     $('body').toggleClass('body--fixed');
+  });
+
+  $('.cart__close').on('click', function () {
+    $('.cart').removeClass('cart--active');
+    $('body').removeClass('body--fixed');
   });
 
   $('.catalog__btn').on('click', function () {
@@ -114,8 +200,8 @@ $(function () {
     $('.catalog__btn').removeClass('catalog__btn--active');
   });
 
+
+
 });
 
-// function cartActive() {
-//   $('.cart').addClass('.cart--active');
-// }
+let mixer = mixitup('.cards__list')
