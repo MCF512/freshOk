@@ -6,9 +6,9 @@
     "cost__old": "1999",
     "image": "images/pineapple.jpg",
     "class": "fruits",
-    "info1": "new",
+    "info1": "cards__info--new",
     "info__text1": "новинка",
-    "info2": "sale__bottom",
+    "info2": "cards__info--sale__bottom",
     "info__text2": "-50%"
   },
   "2": {
@@ -30,7 +30,7 @@
     "cost__old": "",
     "image": "images/thai.jpg",
     "class": "fruits",
-    "info1": "hit",
+    "info1": "cards__info--hit",
     "info__text1": "хит",
     "info2": "",
     "info__text2": ""
@@ -42,7 +42,7 @@
     "cost__old": "",
     "image": "images/pepper.jpg",
     "class": "vegetables",
-    "info1": "new",
+    "info1": "cards__info--new",
     "info__text1": "новинка",
     "info2": "",
     "info__text2": ""
@@ -54,7 +54,7 @@
     "cost__old": "1999",
     "image": "images/carrot.jpg",
     "class": "vegetables",
-    "info1": "hit",
+    "info1": "cards__info--hit",
     "info__text1": "хит",
     "info2": "",
     "info__text2": ""
@@ -66,7 +66,7 @@
     "cost__old": "299",
     "image": "images/sanpelligrino.jpg",
     "class": "drinks",
-    "info1": "sale",
+    "info1": "cards__info--sale",
     "info__text1": "-30%",
     "info2": "",
     "info__text2": ""
@@ -78,7 +78,7 @@
     "cost__old": "1999",
     "image": "images/coffee.jpg",
     "class": "grocery",
-    "info1": "new",
+    "info1": "cards__info--new",
     "info__text1": "новинка",
     "info2": "",
     "info__text2": ""

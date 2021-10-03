@@ -158,13 +158,20 @@
 
     <div class="cart__content" id="cart__content"></div>
 
+    <div class="cart__whole">
+      <h2 class="cart__title cart__title--total">Товаров на сумму</h2>
+      <p class="cart__total cart__total--all">31231</p>
+    </div>
+
+    <button class="cart__order">Оформить заказ</button>
+
 
   </div>
 
   <main class="main">
-    <!-- <section class="slider">
-      <div class="slider__inner">
-        <div class="slider__item" style="background-image: url(../images/slider-bg-carrot.jpg)">
+    <section class="slider">
+      <ul class="slider__inner">
+        <li class="slider__item" style="background-image: url(../images/slider-bg-carrot.jpg)">
           <div class="container">
             <div class="slider__content">
               <h1 class="slider__title">
@@ -177,8 +184,8 @@
               <a class="slider__link" href="#">Купить сейчас</a>
             </div>
           </div>
-        </div>
-        <div class="slider__item" style="background-image: url(../images/slider-bg-tomato.jpg)">
+        </li>
+        <li class="slider__item" style="background-image: url(../images/slider-bg-tomato.jpg)">
           <div class="container">
             <div class="slider__content">
               <h1 class="slider__title">
@@ -191,8 +198,8 @@
               <a class="slider__link" href="#">Купить сейчас</a>
             </div>
           </div>
-        </div>
-        <div class="slider__item" style="background-image: url(../images/slider-bg-green.jpg)">
+        </li>
+        <li class="slider__item" style="background-image: url(../images/slider-bg-green.jpg)">
           <div class="container">
             <div class="slider__content">
               <h1 class="slider__title">
@@ -203,11 +210,11 @@
               <a class="slider__link" href="#">Купить сейчас</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section> -->
+        </li>
+      </ul>
+    </section>
 
-    <!-- <div class="about">
+    <div class="about">
       <div class="container">
         <ul class="about__list">
           <li class="about__item about__item--delivery">
@@ -236,7 +243,7 @@
           </li>
         </ul>
       </div>
-    </div> -->
+    </div>
 
     <section class="products" data-ref="mix1">
       <div class="container">
@@ -261,7 +268,7 @@
           </li>
         </ul>
 
-        <ul class="cards__list">
+        <ul class="cards">
           <!-- <li class="cards__item mix fruits">
             <div class="cards__info cards__info--new">новинка</div>
             <div class="cards__info cards__info--sale__bottom">-50%</div>
@@ -447,14 +454,12 @@
 
         <button class="products__more">Показать еще</button>
 
-
-
       </div>
     </section>
 
-    <!-- <div class="container">
+    <div class="container">
       <ul class="banners">
-        <li class="banners__item banners__item--first" style="background-image: url(../images/banner-bg1.jpg)">
+        <li class="banners__item banners__item--lg" style="background-image: url(../images/banner-bg1.jpg)">
           <p class="banners__text">
             свежайшие фрукты
           </p>
@@ -490,9 +495,9 @@
           </a>
         </li>
       </ul>
-    </div> -->
+    </div>
 
-    <!-- <section class="promo" data-ref="mix2">
+    <section class="sales" data-ref="mix2">
       <div class="container">
         <h2 class="products__title title">
           Акции
@@ -509,7 +514,178 @@
           </li>
         </ul>
 
-        <ul class="cards__list cards__list--promo">
+        <ul class="sales__list">
+          <li class="sales__item">
+            <div class="cards__info cards__info--new">новинка</div>
+            <a class="sales__link" href="#">
+              <img src="images/pineapple.jpg" alt="" class="sales__img">
+            </a>
+            <div class="sales__info">
+              <p class="sales__name">Ананас, 1 кг</p>
+              <p class="sales__available sales__available--yes">в наличии</p>
+              <div class="sales__bottom">
+                <p class="sales__cost">
+                  999₽
+                </p>
+                <p class="sales__cost--old">
+                  1999₽
+                </p>
+                <p class="sales__rating">
+                  4.5
+                </p>
+              </div>
+            </div>
+          </li>
+          <!-- <li class="sales__item">
+            <div class="cards__info cards__info--new">новинка</div>
+            <a class="sales__link" href="#">
+              <img src="images/pineapple.jpg" alt="" class="sales__img">
+            </a>
+            <div class="sales__info">
+              <p class="sales__name">Ананас, 1 кг</p>
+              <p class="sales__available sales__available--yes">в наличии</p>
+              <div class="sales__bottom">
+                <p class="sales__cost">
+                  999₽
+                </p>
+                <p class="sales__cost--old">
+                  1999₽
+                </p>
+                <p class="sales__rating">
+                  4.5
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="sales__item">
+            <div class="cards__info cards__info--new">новинка</div>
+            <a class="sales__link" href="#">
+              <img src="images/pineapple.jpg" alt="" class="sales__img">
+            </a>
+            <div class="sales__info">
+              <p class="sales__name">Ананас, 1 кг</p>
+              <p class="sales__available sales__available--yes">в наличии</p>
+              <div class="sales__bottom">
+                <p class="sales__cost">
+                  999₽
+                </p>
+                <p class="sales__cost--old">
+                  1999₽
+                </p>
+                <p class="sales__rating">
+                  4.5
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="sales__item">
+            <div class="cards__info cards__info--new">новинка</div>
+            <a class="sales__link" href="#">
+              <img src="images/pineapple.jpg" alt="" class="sales__img">
+            </a>
+            <div class="sales__info">
+              <p class="sales__name">Ананас, 1 кг</p>
+              <p class="sales__available sales__available--yes">в наличии</p>
+              <div class="sales__bottom">
+                <p class="sales__cost">
+                  999₽
+                </p>
+                <p class="sales__cost--old">
+                  1999₽
+                </p>
+                <p class="sales__rating">
+                  4.5
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="sales__item">
+            <div class="cards__info cards__info--new">новинка</div>
+            <a class="sales__link" href="#">
+              <img src="images/pineapple.jpg" alt="" class="sales__img">
+            </a>
+            <div class="sales__info">
+              <p class="sales__name">Ананас, 1 кг</p>
+              <p class="sales__available sales__available--yes">в наличии</p>
+              <div class="sales__bottom">
+                <p class="sales__cost">
+                  999₽
+                </p>
+                <p class="sales__cost--old">
+                  1999₽
+                </p>
+                <p class="sales__rating">
+                  4.5
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="sales__item">
+            <div class="cards__info cards__info--new">новинка</div>
+            <a class="sales__link" href="#">
+              <img src="images/pineapple.jpg" alt="" class="sales__img">
+            </a>
+            <div class="sales__info">
+              <p class="sales__name">Ананас, 1 кг</p>
+              <p class="sales__available sales__available--yes">в наличии</p>
+              <div class="sales__bottom">
+                <p class="sales__cost">
+                  999₽
+                </p>
+                <p class="sales__cost--old">
+                  1999₽
+                </p>
+                <p class="sales__rating">
+                  4.5
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="sales__item">
+            <div class="cards__info cards__info--new">новинка</div>
+            <a class="sales__link" href="#">
+              <img src="images/pineapple.jpg" alt="" class="sales__img">
+            </a>
+            <div class="sales__info">
+              <p class="sales__name">Ананас, 1 кг</p>
+              <p class="sales__available sales__available--yes">в наличии</p>
+              <div class="sales__bottom">
+                <p class="sales__cost">
+                  999₽
+                </p>
+                <p class="sales__cost--old">
+                  1999₽
+                </p>
+                <p class="sales__rating">
+                  4.5
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="sales__item">
+            <div class="cards__info cards__info--new">новинка</div>
+            <a class="sales__link" href="#">
+              <img src="images/pineapple.jpg" alt="" class="sales__img">
+            </a>
+            <div class="sales__info">
+              <p class="sales__name">Ананас, 1 кг</p>
+              <p class="sales__available sales__available--yes">в наличии</p>
+              <div class="sales__bottom">
+                <p class="sales__cost">
+                  999₽
+                </p>
+                <p class="sales__cost--old">
+                  1999₽
+                </p>
+                <p class="sales__rating">
+                  4.5
+                </p>
+              </div>
+            </div>
+          </li> -->
+        </ul>
+
+        <!-- <ul class="sales__list">
           <li class="cards__item cards__item--promo mix new">
             <div class="cards__info cards__info--new">новинка</div>
             <a class="cards__link" href="#">
@@ -694,13 +870,13 @@
               </p>
             </div>
           </li>
-        </ul>
+        </ul> -->
 
         <button class="products__more products__more--promo">Показать еще</button>
       </div>
-    </section> -->
+    </section>
 
-    <!-- <div class="brands">
+    <div class="brands">
       <div class="container">
         <ul class="brands__list">
           <li class="brands__item">
@@ -735,9 +911,9 @@
           </li>
         </ul>
       </div>
-    </div> -->
+    </div>
 
-    <!-- <section class="news">
+    <section class="news">
       <div class="container">
         <div class="news__top">
           <h2 class="title news__title">наши новости</h2>
@@ -786,11 +962,11 @@
           </li>
         </ul>
       </div>
-    </section> -->
+    </section>
 
   </main>
 
-  <!-- <footer class="footer">
+  <footer class="footer">
     <div class="footer__top">
       <div class="container">
         <a class="logo footer__logo" href="#">
@@ -890,7 +1066,7 @@
         <img class="footer__card" src="images/icons/mastercard.svg" alt="mastercard">
       </div>
     </div>
-  </footer> -->
+  </footer>
 
 
   <script src="js/main.min.js"></script>
