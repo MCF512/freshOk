@@ -2,10 +2,10 @@ let cart = {}; //корзина
 
 $(function () {
   loadProducts();
-  showCart();
   checkCart();
-  showMiniCart();
   loadSales();
+
+  let mixer = mixitup('.cards')
 
   // var containerEl1 = document.querySelector('[data-ref="mix1"]');
   // var containerEl2 = document.querySelector('[data-ref="mix2"]');
@@ -17,7 +17,7 @@ $(function () {
   //   }
   // };
 
-  //var mixer1 = mixitup(containerEl1, config);
+  // var mixer1 = mixitup(containerEl1, config);
   // var mixer1 = mixitup(containerEl2, config);
 });
 
@@ -44,15 +44,52 @@ function loadProducts() {
       out += '<img class="cards__img" src="' + data[key]['image'] + '">';
       out += '<p class="cards__name">' + data[key]['name'] + '</p>';
       out += '</a>';
+      // out += '<div class="cards__numbers">' + showButtons() + '</div>';
+      out += '<div class="cards__numbers">';
+      out += '<button class="cart__count cart__count--minuss" data-art="' + key + '"></button>';
+      out += '<p class="cart__number">' + cart[key] + '</p>';
+      out += '<button class="cart__count cart__count--pluss" data-art="' + key + '"></button>';
+      out += '</div>';
       out += '<div class="cards__bottom">';
       out += '<p class="cards__price">' + '<span class="cards__price ' + data[key]['cost__class'] + '">' + data[key]['cost__old'] + ' ₽</span>' + data[key]['cost'] + ' ₽</p>';
       out += '<button class="cards__btn" data-art="' + key + '"></button>';
       out += '</div>';
       out += '</li>';
     }
+
+    // deleteButton();
     $('.cards').html(out);
     $('.cards__btn').on('click', addToCart);
+    // $('.cart__count--pluss').on('click', plusProducts);
+    $('.cart__count--pluss').on('click', addToCart);
+    $('.cart__count--minuss').on('click', minusProducts);
+    // $('.cart__count--minuss').on('click', deleteButton);
+    showCart();
+    showMiniCart();
+    saveCartToLS();
+    checkCart();
   })
+}
+
+// function deleteButtons() {
+//   let articul = $(this).attr('data-art');
+//   if (cart[articul] < 1) {
+//     $('.cards__numbers').empty()
+//   }
+// }
+
+function deleteButton() {
+
+  let articul = $(this).attr('data-art');
+  if (cart[articul] > 1) {
+    cart[articul]--;
+  }
+  else {
+    // delete cart[articul]
+    $('.cards__numbers').addClass('cards__numbers--none')
+  };
+
+  loadProducts();
 }
 
 function loadSales() {
@@ -83,6 +120,7 @@ function loadSales() {
 }
 
 function showCart() {
+  //добавляю товары в корзину
   $.getJSON('products.json', function (data) {
     if ($.isEmptyObject(cart)) {
       //корзина пуста
@@ -121,9 +159,8 @@ function showCart() {
 function plusProducts() {
   let articul = $(this).attr('data-art');
   cart[articul]++;
-  saveCartToLS();
-  showCart();
-  showMiniCart();
+  // saveCartToLS();
+  loadProducts()
 }
 
 function minusProducts() {
@@ -132,19 +169,16 @@ function minusProducts() {
     cart[articul]--;
   }
   else {
-    delete cart[articul]
+    delete cart[articul];
+    $('.cards__numbers').addClass('cards__numbers--none')
   };
-  saveCartToLS();
-  showCart();
-  showMiniCart();
+  loadProducts();
 }
 
 function deleteProducts() {
   let articul = $(this).attr('data-art');
   delete cart[articul];
-  saveCartToLS();
-  showCart();
-  showMiniCart();
+  loadProducts();
 }
 
 function addToCart() {
@@ -158,8 +192,7 @@ function addToCart() {
   }
   localStorage.setItem('cart', JSON.stringify(cart));
   //console.log(cart);
-  showCart();
-  showMiniCart();
+  loadProducts()
 }
 function checkCart() {
   //проверяю наличие корзины в locolStorage;
@@ -234,5 +267,3 @@ $(function () {
 
 
 });
-
-let mixer = mixitup('.cards')

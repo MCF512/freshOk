@@ -67,15 +67,14 @@
     display: flex;
     position: relative;
 
-    span::before {
+    &::before {
       content: url(../images/icons/search.svg);
       position: absolute;
       top: 16px;
       left: 12px;
+      z-index: 1;
     }
-  }
-
-  
+  } 
 
   &__input {
     width: 420px;
@@ -908,6 +907,12 @@
         transform:rotate(-12deg);
         top: 9px;
       }
+    }
+  }
+
+  &__numbers {
+    &--none {
+      display: none;
     }
   }
 }
