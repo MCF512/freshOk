@@ -5,7 +5,7 @@ $(function () {
   checkCart();
   loadSales();
 
-  let mixer = mixitup('.cards')
+  // let mixer = mixitup('.cards')
 
   // var containerEl1 = document.querySelector('[data-ref="mix1"]');
   // var containerEl2 = document.querySelector('[data-ref="mix2"]');
@@ -45,11 +45,11 @@ function loadProducts() {
       out += '<p class="cards__name">' + data[key]['name'] + '</p>';
       out += '</a>';
       // out += '<div class="cards__numbers">' + showButtons() + '</div>';
-      out += '<div class="cards__numbers">';
-      out += '<button class="cart__count cart__count--minuss" data-art="' + key + '"></button>';
-      out += '<p class="cart__number">' + cart[key] + '</p>';
-      out += '<button class="cart__count cart__count--pluss" data-art="' + key + '"></button>';
-      out += '</div>';
+      // out += '<div class="cards__numbers">';
+      // out += '<button class="cart__count cart__count--minuss" data-art="' + key + '"></button>';
+      // out += '<p class="cart__number">' + cart[key] + '</p>';
+      // out += '<button class="cart__count cart__count--pluss" data-art="' + key + '"></button>';
+      // out += '</div>';
       out += '<div class="cards__bottom">';
       out += '<p class="cards__price">' + '<span class="cards__price ' + data[key]['cost__class'] + '">' + data[key]['cost__old'] + ' ₽</span>' + data[key]['cost'] + ' ₽</p>';
       out += '<button class="cards__btn" data-art="' + key + '"></button>';
@@ -63,33 +63,21 @@ function loadProducts() {
     // $('.cart__count--pluss').on('click', plusProducts);
     $('.cart__count--pluss').on('click', addToCart);
     $('.cart__count--minuss').on('click', minusProducts);
-    // $('.cart__count--minuss').on('click', deleteButton);
     showCart();
     showMiniCart();
     saveCartToLS();
     checkCart();
+  }).then(() => {
+    var containerEl1 = document.querySelector('[data-ref="mix1"]');
+
+    var config = {
+      controls: {
+        scope: 'local'
+      }
+    };
+
+    var mixer1 = mixitup(containerEl1, config);
   })
-}
-
-// function deleteButtons() {
-//   let articul = $(this).attr('data-art');
-//   if (cart[articul] < 1) {
-//     $('.cards__numbers').empty()
-//   }
-// }
-
-function deleteButton() {
-
-  let articul = $(this).attr('data-art');
-  if (cart[articul] > 1) {
-    cart[articul]--;
-  }
-  else {
-    // delete cart[articul]
-    $('.cards__numbers').addClass('cards__numbers--none')
-  };
-
-  loadProducts();
 }
 
 function loadSales() {
@@ -116,6 +104,16 @@ function loadSales() {
       out += '</li>';
     }
     $('.sales__list').html(out);
+  }).then(() => {
+    var containerEl2 = document.querySelector('[data-ref="mix2"]');
+
+    var config = {
+      controls: {
+        scope: 'local'
+      }
+    };
+    var mixer1 = mixitup(containerEl2, config);
+
   })
 }
 
@@ -133,7 +131,7 @@ function showCart() {
       for (let key in cart) {
         out += '<div class="cart__item">';
         out += '<a class="cart__link" href="#">';
-        out += '<img class="cart__img" src="' + data[key]['image'] + '">';
+        out += '<img class="cart__img" src="' + data[key].image + '">';
         out += '</a>';
         out += '<div class="cart__info">';
         out += '<p class="cart__name">' + data[key]['name'] + '</p>';
@@ -156,12 +154,45 @@ function showCart() {
   })
 }
 
+// function showTotal() {
+//   //вывод полной суммы в корзине
+//   $(document).on('click', function (e) {
+//     console.log(e)
+//   })
+// }
+
+
+// $(document).on('click', function () {
+//   // console.log(e.target);
+//   $('.cart__count').on('click', function () {
+//     // console.log(a.target)
+//     let txt = $('.cart__total').text();
+//     console.log(txt)
+//   })
+// })
+// if ($(document))
+
 function plusProducts() {
   let articul = $(this).attr('data-art');
   cart[articul]++;
+  // $(document).on('click', function () {
+  // console.log(e.target);
+  // $('.cart__count').on('click', function () {
+  // console.log(a.target)
+
+  // })
+  // })
   // saveCartToLS();
   loadProducts()
+  // total()
 }
+// function total() {
+
+//   // let articul = $(this).attr('data-art');
+//   let txt = $('.cart__total').text().slice(0, -1);
+//   let num = Number(txt);
+//   console.log(num)
+// }
 
 function minusProducts() {
   let articul = $(this).attr('data-art');
@@ -263,7 +294,4 @@ $(function () {
     $('.catalog__list').removeClass('catalog__list--active');
     $('.catalog__btn').removeClass('catalog__btn--active');
   });
-
-
-
 });

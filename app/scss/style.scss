@@ -402,6 +402,7 @@
     // display: block;
     display: flex;
     flex-direction: column;
+    position: fixed;
   }
 
   &__top {
@@ -755,7 +756,8 @@
   margin-bottom: 48px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 410px);
+  // grid-template-rows: repeat(2, 410px);
+  grid-template-rows: 410px;
   grid-gap: 30px;
 
   &__info {
