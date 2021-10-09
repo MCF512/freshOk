@@ -5,7 +5,7 @@ $(function () {
   // checkCart();
   // loadSales();
 
-  // let mixer = mixitup('.cards')
+  // let mixer = mixitup('.cards') 
 
   var containerEl1 = document.querySelector('[data-ref="mix1"]');
   var containerEl2 = document.querySelector('[data-ref="mix2"]');
@@ -33,6 +33,7 @@ $('.slider__inner--responsive').slick({
 });
 
 $(function () {
+
   $('.header__cart').on('click', function () {
     $('.cart').toggleClass('cart--active');
     $('body').toggleClass('body--fixed');
@@ -82,6 +83,10 @@ $(function () {
     $('.header__form').toggleClass('header__form--active')
   });
 });
+
+if ($(window).width() < 767) {
+  $('#cards__name').html('Напиток сокосодержащий Sanpellegrino... ')
+};
 
 // function loadProducts() {
 //   //загружаю товары на страницу
