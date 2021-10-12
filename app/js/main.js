@@ -16,8 +16,24 @@ $(function () {
     }
   };
 
-  var mixer1 = mixitup(containerEl1, config);
-  var mixer1 = mixitup(containerEl2, config);
+  var mixer1 = mixitup(containerEl1, {
+    controls: {
+      scope: 'local'
+    },
+    classNames: {
+      block: 'cards'
+    }
+
+
+  });
+  var mixer1 = mixitup(containerEl2, {
+    controls: {
+      scope: 'local'
+    },
+    classNames: {
+      block: 'sales'
+    }
+  });
 });
 
 
@@ -30,6 +46,81 @@ $('.slider__inner').slick({
 $('.slider__inner--responsive').slick({
   dots: true,
   arrows: false
+});
+
+// $(".price__range").ionRangeSlider({
+//   type: "double",
+//   min: 100,
+//   max: 1000,
+//   from: 100,
+//   to: 500,
+//   prefix: "$"
+//   // grid: true,
+// });
+
+var $range = $(".price__range");
+var $inputFrom = $(".price__from");
+var $inputTo = $(".price__to");
+var instance;
+var min = 0;
+var max = 1200;
+var from = 0;
+var to = 0;
+
+$range.ionRangeSlider({
+  skin: "round",
+  type: "double",
+  min: min,
+  max: max,
+  from: 100,
+  to: 1000,
+  onStart: updateInputs,
+  onChange: updateInputs,
+  onFinish: updateInputs
+});
+instance = $range.data("ionRangeSlider");
+
+function updateInputs(data) {
+  from = data.from;
+  to = data.to;
+
+  $inputFrom.prop("value", from);
+  $inputTo.prop("value", to);
+}
+
+$inputFrom.on("change", function () {
+  var val = $(this).prop("value");
+
+  // validate
+  if (val < min) {
+    val = min;
+  } else if (val > to) {
+    val = to;
+  }
+
+  instance.update({
+    from: val
+  });
+
+  $(this).prop("value", val);
+
+});
+
+$inputTo.on("change", function () {
+  var val = $(this).prop("value");
+
+  // validate
+  if (val < from) {
+    val = from;
+  } else if (val > max) {
+    val = max;
+  }
+
+  instance.update({
+    to: val
+  });
+
+  $(this).prop("value", val);
 });
 
 $(function () {
@@ -70,12 +161,12 @@ $(function () {
   });
 
   $('.header__burger').on('click', function () {
-    $('.burger').addClass('burger--active');
+    $('.navigation').addClass('navigation--active');
     $('body').addClass('body--fixed');
   });
 
-  $('.burger__close').on('click', function () {
-    $('.burger').removeClass('burger--active');
+  $('.navigation__close').on('click', function () {
+    $('.navigation').removeClass('navigation--active');
     $('body').removeClass('body--fixed');
   });
 

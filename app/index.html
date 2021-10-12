@@ -65,9 +65,11 @@
 
     <div class="container">
       <div class="header__inner">
-        <a class="logo" href="#">
-          <img src="images/icons/logo.svg" alt="logo">
-        </a>
+        <picture class="logo__pic">
+          <a class="logo" href="#">
+            <img src="images/icons/logo.svg" alt="logo">
+          </a>
+        </picture>
 
         <div class="catalog">
           <button class="catalog__btn">Каталог продуктов</button>
@@ -165,27 +167,27 @@
     </div>
   </header>
 
-  <div class="burger">
+  <div class="navigation">
 
-    <button class="burger__close"></button>
-    <a class="burger__logo" href="#">
+    <button class="navigation__close"></button>
+    <a class="navigation__logo" href="#">
       <img src="images/icons/burger-logo.svg" alt="logo">
     </a>
-    <ul class="burger__login">
-      <li class="burger__item">
-        <a class="burger__link burger__link--login" href="#">Вход</a>
+    <ul class="navigation__login">
+      <li class="navigation__item">
+        <a class="navigation__link navigation__link--login" href="#">Вход</a>
       </li>
-      <li class="burger__item">
-        <a class="burger__link" href="#">Регистрация</a>
+      <li class="navigation__item">
+        <a class="navigation__link" href="#">Регистрация</a>
       </li>
     </ul>
-    <a class="burger__catalog">Каталог товаров</a>
-    <ul class="burger__info">
-      <li class="burger__item">
-        <a class="burger__contact burger__contact--phone" href="">+7 907 288 365</a>
+    <a class="navigation__catalog">Каталог товаров</a>
+    <ul class="navigation__info">
+      <li class="navigation__item">
+        <a class="navigation__contact navigation__contact--phone" href="">+7 907 288 365</a>
       </li>
-      <li class="burger__item">
-        <a class="burger__contact burger__contact--location" href="">Санкт-Петербург, ул. Ленина, 1</a>
+      <li class="navigation__item">
+        <a class="navigation__contact navigation__contact--location" href="">Санкт-Петербург, ул. Ленина, 1</a>
       </li>
     </ul>
     <ul class="contact__list contact__list--burger">
@@ -211,30 +213,30 @@
       </li>
     </ul>
 
-    <ul class="burger__menu">
-      <li class="burger__item">
-        <a class="burger__nav" href="#">Доставка</a>
+    <ul class="navigation__menu">
+      <li class="navigation__item">
+        <a class="navigation__nav" href="#">Доставка</a>
       </li>
-      <li class="burger__item">
-        <a class="burger__nav" href="#">О нас</a>
+      <li class="navigation__item">
+        <a class="navigation__nav" href="#">О нас</a>
       </li>
-      <li class="burger__item">
-        <a class="burger__nav" href="#">Новости</a>
+      <li class="navigation__item">
+        <a class="navigation__nav" href="#">Новости</a>
       </li>
-      <li class="burger__item">
-        <a class="burger__nav" href="#">Контакты</a>
+      <li class="navigation__item">
+        <a class="navigation__nav" href="#">Контакты</a>
       </li>
-      <li class="burger__item">
-        <a class="burger__nav" href="#">Акции</a>
+      <li class="navigation__item">
+        <a class="navigation__nav" href="#">Акции</a>
       </li>
-      <li class="burger__item">
-        <a class="burger__nav" href="#">Вакансии</a>
+      <li class="navigation__item">
+        <a class="navigation__nav" href="#">Вакансии</a>
       </li>
-      <li class="burger__item">
-        <a class="burger__nav" href="#">Отзывы</a>
+      <li class="navigation__item">
+        <a class="navigation__nav" href="#">Отзывы</a>
       </li>
-      <li class="burger__item">
-        <a class="burger__nav" href="#">Публичная оферта</a>
+      <li class="navigation__item">
+        <a class="navigation__nav" href="#">Публичная оферта</a>
       </li>
     </ul>
   </div>
@@ -623,15 +625,15 @@
         <h2 class="products__title title">
           Акции
         </h2>
-        <ul class="products__list">
-          <li class="products__item">
-            <button class="products__btn" data-filter="all">Все товары</button>
+        <ul class="sales__filters">
+          <li class="sales__filter">
+            <button class="sales__btn" data-filter="all">Все товары</button>
           </li>
-          <li class="products__item">
-            <button class="products__btn" data-filter=".new">новинки</button>
+          <li class="sales__filter">
+            <button class="sales__btn" data-filter=".new">новинки</button>
           </li>
-          <li class="products__item">
-            <button class="products__btn" data-filter=".hit">хиты</button>
+          <li class="sales__filter">
+            <button class="sales__btn" data-filter=".hit">хиты</button>
           </li>
         </ul>
 
@@ -1051,9 +1053,12 @@
   <footer class="footer">
     <div class="footer__top">
       <div class="container">
-        <a class="logo footer__logo" href="#">
-          <img src="images/icons/logo.svg" alt="logo">
-        </a>
+        <picture class="logo__pic">
+          <a class="footer__logo logo" href="#">
+            <img src="images/icons/logo.svg" alt="logo">
+          </a>
+        </picture>
+
         <div class="footer__inner">
           <form class="footer__form" action="#">
             <label for="email">Следите за нашими акциями</label>

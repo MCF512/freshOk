@@ -1,5 +1,15 @@
 @media(max-width:1200px) {
   
+  .logo {
+
+    img {
+      display: none;
+    }
+
+    &::after {
+      content: url(../images/icons/logo-short.svg);
+    }
+  }
 
   .catalog {
     display: none;
@@ -88,11 +98,16 @@
   }  
 
   .slider {
+    
     &__inner {
       display: none;
       &--responsive {
         display: flex;
       }
+    }
+
+    &__content {
+      border-radius: 0;
     }
   }
 
@@ -131,6 +146,16 @@
 
     &__form {
       margin-right: 60px;
+    }
+
+    &__logo {
+      img {
+        display: block;
+      }
+
+      &::after {
+        display: none;
+      }
     }
   }
 }
@@ -247,7 +272,11 @@
   .contact {
     margin: 0 auto;
     margin-bottom: 50px;
-    align-items: center;
+    align-items: flex-start;
+
+    &__list {
+      align-self: center;
+    }
   }
 }
 
@@ -425,7 +454,7 @@
     padding-bottom: 48px;
 
     &__item {
-      padding: 76px 80px 30px 15px;
+      padding: 76px 138px 30px 15px;
       height: 345px;
       &--lg {
         grid-column: span 1;
