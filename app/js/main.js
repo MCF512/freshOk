@@ -173,6 +173,30 @@ $(function () {
   $('.header__icon--search').on('click', function () {
     $('.header__form').toggleClass('header__form--active')
   });
+
+  $('.goods__filter--list').on('click', function () {
+    $('.cards__goods').addClass('cards__goods--list');
+    $('.cards__item').addClass('cards__item--list');
+    $('.goods__filter--list').addClass('goods__filter--active');
+    $('.goods__filter--column').removeClass('goods__filter--active');
+  });
+
+  $('.goods__filter--column').on('click', function () {
+    $('.cards__goods').removeClass('cards__goods--list');
+    $('.cards__item').removeClass('cards__item--list');
+    $('.goods__filter--column').addClass('goods__filter--active');
+    $('.goods__filter--list').removeClass('goods__filter--active');
+  });
+
+  $('.goods__filter--open').on('click', function () {
+    $('.filters').toggleClass('filters--active');
+    $('body').toggleClass('body--fixed');
+  });
+
+  $('.filters__close').on('click', function () {
+    $('.filters').removeClass('filters--active');
+    $('body').removeClass('body--fixed');
+  });
 });
 
 if ($(window).width() < 767) {
