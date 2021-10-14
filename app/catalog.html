@@ -266,21 +266,21 @@
 
   </div>
 
-  <div class="breadcrumbs">
-    <div class="container">
-      <ul class="breadcrumbs__list">
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="#">Главная </a>
-        </li>
-
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="#">Каталог товаров</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
   <main class="main">
+
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Главная </a>
+          </li>
+
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Каталог товаров</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <section class="catalogue">
       <div class="container">
@@ -293,7 +293,7 @@
 
             <button class="filters__close"></button>
             <div class="categories">
-              <button class="categories__btn filters__btn">Категории</button>
+              <button class="filters__btn filters__btn--categories">Категории</button>
 
               <ul class="filters__list filters__list--categories">
                 <li class="filters__item">
@@ -324,9 +324,9 @@
             </div>
 
             <div class="offers">
-              <button class="offers__btn filters__btn">Предложения</button>
+              <button class="filters__btn filters__btn--offers">Предложения</button>
 
-              <ul class="filters__list">
+              <ul class="filters__list filters__list--offers">
                 <li class="filters__item">
                   <input type="checkbox" id="sale">
                   <label for="sale">Со скидкой</label>
@@ -343,9 +343,9 @@
             </div>
 
             <div class="trademarks">
-              <button class="trademarks__btn filters__btn">Бренд</button>
+              <button class="filters__btn filters__btn--trademarks">Бренд</button>
 
-              <ul class="filters__list">
+              <ul class="filters__list filters__list--trademarks">
                 <li class="filters__item">
                   <input type="checkbox" id="cola">
                   <label for="cola">CocaCola</label>
@@ -374,7 +374,7 @@
             </div>
 
             <div class="price">
-              <button class="price__btn filters__btn">Цена</button>
+              <button class="filters__btn filters__btn--price">Цена</button>
 
               <form class="price__form" action="">
                 <div class="price__inner">
@@ -393,8 +393,44 @@
           <div class="goods">
             <div class="goods__filters">
               <button class="goods__filter goods__filter--open"></button>
-              <button class="goods__filter">По названию</button>
-              <button class="goods__filter">по 12</button>
+              <div class="goods__name">
+                <button class="goods__filter goods__filter--name">По названию</button>
+
+                <ul class="filters__list filters__list--name">
+                  <li class="filters__item filters__item--name">
+                    <button class="name__filter">По популярности</button>
+                  </li>
+                  <li class="filters__item filters__item--name">
+                    <button class="name__filter">Сначала дешевые</button>
+                  </li>
+                  <li class="filters__item filters__item--name">
+                    <button class="name__filter">Сначала дорогие</button>
+                  </li>
+                  <li class="filters__item filters__item--name">
+                    <button class="name__filter">По алфавиту</button>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="goods__numbers">
+                <button class="goods__filter goods__filter--number">по 12</button>
+
+                <ul class="filters__list filters__list--number">
+                  <li class="filters__item filters__item--number">
+                    <button class="name__filter">по 18</button>
+                  </li>
+                  <li class="filters__item filters__item--number">
+                    <button class="name__filter">по 24</button>
+                  </li>
+                  <li class="filters__item filters__item--number">
+                    <button class="name__filter">по 30</button>
+                  </li>
+                  <li class="filters__item filters__item--number">
+                    <button class="name__filter">по 36</button>
+                  </li>
+                </ul>
+              </div>
+
               <button class="goods__filter goods__filter--list"><svg width="35" height="35" viewBox="0 0 35 35"
                   fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -416,7 +452,7 @@
                     d="M10.4 0H2.6C1.16406 0 0 0.626801 0 1.4V5.6C0 6.3732 1.16406 7 2.6 7H10.4C11.8359 7 13 6.3732 13 5.6V1.4C13 0.626801 11.8359 0 10.4 0Z"
                     fill="#C1C1C1" />
                 </svg></button>
-              <button class="goods__filter goods__filter--column goods__filter--active"><svg width="36" height="34"
+              <button class="goods__filter goods__filter--column goods__filter--fill"><svg width="36" height="34"
                   viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M6.04444 26.4445H1.51111C0.676547 26.4445 0 27.121 0 27.9556V32.4889C0 33.3235 0.676547 34 1.51111 34H6.04444C6.87901 34 7.55556 33.3235 7.55556 32.4889V27.9556C7.55556 27.121 6.87901 26.4445 6.04444 26.4445Z"
@@ -829,26 +865,26 @@
               <button class="goods__more">Показать еще</button>
 
               <ul class="goods__numbers">
-                <li class="goods__item">
-                  <button class="goods__number"></button>
+                <li class="goods__item goods__item--first">
+                  <a class="goods__number" href="#"></a>
+                </li>
+                <li class="goods__item goods__item--active">
+                  <a class="goods__number" href="#">1</a>
                 </li>
                 <li class="goods__item">
-                  <button class="goods__number">1</button>
+                  <a class="goods__number" href="#">2</a>
+                </li>
+                <li class="goods__item goods__item--range">
+                  <a class="goods__number" href="#">...</a>
                 </li>
                 <li class="goods__item">
-                  <button class="goods__number">2</button>
+                  <a class="goods__number" href="#">9</a>
                 </li>
                 <li class="goods__item">
-                  <button class="goods__number">...</button>
+                  <a class="goods__number" href="#">10</a>
                 </li>
-                <li class="goods__item">
-                  <button class="goods__number">9</button>
-                </li>
-                <li class="goods__item">
-                  <button class="goods__number">10</button>
-                </li>
-                <li class="goods__item">
-                  <button class="goods__number"></button>
+                <li class="goods__item goods__item--last">
+                  <a class="goods__number" href="#"></a>
                 </li>
               </ul>
             </div>

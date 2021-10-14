@@ -177,15 +177,16 @@ $(function () {
   $('.goods__filter--list').on('click', function () {
     $('.cards__goods').addClass('cards__goods--list');
     $('.cards__item').addClass('cards__item--list');
-    $('.goods__filter--list').addClass('goods__filter--active');
-    $('.goods__filter--column').removeClass('goods__filter--active');
+    $('.goods__filter--list').addClass('goods__filter--fill');
+    $('.goods__filter--column').removeClass('goods__filter--fill');
+    // $('.cards__name').addClass('cards__name--list');
   });
 
   $('.goods__filter--column').on('click', function () {
     $('.cards__goods').removeClass('cards__goods--list');
     $('.cards__item').removeClass('cards__item--list');
-    $('.goods__filter--column').addClass('goods__filter--active');
-    $('.goods__filter--list').removeClass('goods__filter--active');
+    $('.goods__filter--column').addClass('goods__filter--fill');
+    $('.goods__filter--list').removeClass('goods__filter--fill');
   });
 
   $('.goods__filter--open').on('click', function () {
@@ -196,6 +197,36 @@ $(function () {
   $('.filters__close').on('click', function () {
     $('.filters').removeClass('filters--active');
     $('body').removeClass('body--fixed');
+  });
+
+  $('.filters__btn--categories').on('click', function () {
+    $('.filters__list--categories').toggleClass('filters__list--disabled')
+    $('.filters__btn--categories').toggleClass('filters__btn--disabled')
+  });
+
+  $('.filters__btn--offers').on('click', function () {
+    $('.filters__list--offers').toggleClass('filters__list--disabled')
+    $('.filters__btn--offers').toggleClass('filters__btn--disabled')
+  });
+
+  $('.filters__btn--trademarks').on('click', function () {
+    $('.filters__list--trademarks').toggleClass('filters__list--disabled')
+    $('.filters__btn--trademarks').toggleClass('filters__btn--disabled')
+  });
+
+  $('.filters__btn--price').on('click', function () {
+    $('.price__form').toggleClass('filters__list--disabled')
+    $('.filters__btn--price').toggleClass('filters__btn--disabled')
+  });
+
+  $('.goods__filter--name').on('click', function () {
+    $('.filters__list--name').toggleClass('filters__list--active')
+    $('.goods__filter--name').toggleClass('goods__filter--active')
+  });
+
+  $('.goods__filter--number').on('click', function () {
+    $('.filters__list--number').toggleClass('filters__list--active')
+    $('.goods__filter--number').toggleClass('goods__filter--active')
   });
 });
 
