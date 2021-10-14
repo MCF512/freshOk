@@ -2089,5 +2089,262 @@
   }
 }
 
+.product {
+  padding-top: 48px;
+  padding-bottom: 63px;
+
+  &__slider {
+    max-width: 630px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $silver-600;
+    border-radius: 6px;
+    margin-right: 30px;
+  }
+
+  &__image {
+    max-width: 630px;
+    width: 100%;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      padding: 69px 0;
+    }    
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__title {
+    font-family: 'Ruda';
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $dark-900;
+    margin-bottom: 18px;
+    display: block;
+
+    &--delivery {
+      font-size: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid $silver-600;
+    }
+  }
+
+  &__demand {
+    padding: 6px 9px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    color: $white;
+    font-weight: 700;
+    font-size: 16px;
+    display: block;
+    width: fit-content;
+    margin-bottom: 18px;
+
+    &--hit {
+      background-color: $orange-900;
+    }
+
+    &--new {
+      background-color: $green-900;
+    }
+
+    &--sale {
+      background-color: $red-900;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    &--code {
+      margin-bottom: 33px;
+    }
+
+    &--price {
+      align-items: flex-end;
+      margin-bottom: 59px;
+    }
+
+    &--count {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__code {
+    padding: 4px 5px;
+    color: $silver-600;
+    background-color: $silver-100;
+    border-radius: 3px;
+    margin-right: 12px;
+  }
+
+  &__avilable {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-left: auto;
+
+    &--yes {
+      color: $green-900;
+    }
+
+    &--ending {
+      color: $red-900;
+    }
+
+    &--no {
+      color: $silver-600;
+    }
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1;
+    color: $green-900;
+
+    &--old {
+      color: $silver-600;
+      font-size: 20px;
+      margin-right: 18px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        border-bottom: 1px solid $silver-600;
+        height: 1px;
+        width: 100%;
+        transform:rotate(-12deg);
+        top: 9px;
+      }
+    }
+  }
+
+  &__count {
+    width: 44px;
+    height: 44px;
+    background-color: $green-900;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color 0.5s, box-shadow 0.5s, opacity 0.5s;
+
+    &--minus {
+      background-image: url(../images/icons/product-minus.svg);
+      border-radius: 3px 0 0 3px;
+    }
+
+    &--plus {
+      background-image: url(../images/icons/product-plus.svg);
+      border-radius: 0 3px 3px 0;
+      margin-right: 18px;
+    }
+
+    &:hover {
+      background-color: $btn-hover;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      outline: transparent;
+    }
+
+    &:active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: rgba($white, 0.5);
+      background-color: $green-900;
+    }
+  }
+
+  &__quantity {
+    height: 44px;
+    padding: 0 17px;
+    display: flex;
+    align-items: center;
+    background-color: $green-200;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  &__add {
+    padding: 13px 12px 12px 49px;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $green-900;
+    border-radius: 3px;
+    position: relative;
+    transition: background-color 0.5s, box-shadow 0.5s, opacity 0.5s;
+
+    &::before {
+      content: '';
+      background-image: url(../images/icons/cart.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 12px;
+      top: 10px;
+    }
+
+    &:hover {
+      background-color: $btn-hover;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      outline: transparent;
+    }
+
+    &:active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: rgba($white, 0.5);
+      background-color: $green-900;
+    }
+  }
+
+  &__favorite {
+    margin-left: auto;
+
+    path {
+      transition: fill 0.5s;
+    }
+
+    &:hover {
+
+      path {
+        fill: $yellow-900;
+      }
+    }
+  }
+
+  &__delivery {
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  &__more {
+    color: $green-900;
+    line-height: 1.2;
+    transition: opacity 0.5s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  
+}
+
+
 
 @import 'media';
