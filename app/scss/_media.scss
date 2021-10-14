@@ -158,6 +158,7 @@
       }
     }
   }
+
 }
 
 @media(max-width:992px) {
@@ -308,6 +309,14 @@
 
     &__filters {
       justify-content: start;
+    }
+  }
+
+  .product {
+
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
     }
   }
 }
