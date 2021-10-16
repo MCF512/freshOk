@@ -569,6 +569,12 @@
     &__name {
       margin-bottom: 50px;
     }
+
+    &__more {
+      .slick-slide {
+        padding: 0 3px;
+      }
+    }
   }
 
   .banners {

@@ -1241,6 +1241,10 @@
 
   &__more {
     position: relative;
+
+    .slick-slide {
+      padding: 0 15px;
+    }
   }
 }
 
@@ -2391,6 +2395,10 @@
     }
   }
 
+  &__rating {
+    z-index: 1;
+  }
+
   
 }
 
@@ -2596,10 +2604,6 @@
   &__title {
     margin-bottom: 48px;
   }
-}
-
-.slick-slide {
-  padding: 0 15px;
 }
 
 .pop-up {

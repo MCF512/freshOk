@@ -11,6 +11,7 @@ $(function () {
 
   var containerEl1 = document.querySelector('[data-ref="mix1"]');
   var containerEl2 = document.querySelector('[data-ref="mix2"]');
+  // var containerEl3 = document.querySelector('[data-ref="mix3"]');
   // var containerEl3 = document.querySelector('.info__wrapper');
 
   var config = {
@@ -37,20 +38,25 @@ $(function () {
       block: 'sales'
     }
   });
+
+
 });
 
-var mixer = mixitup('.info__wrapper', {
-  controls: {
-    scope: 'local'
-  },
+$(function () {
+  var mixer = mixitup('.info__wrapper', {
+    controls: {
+      scope: 'local'
+    },
 
-  load: {
-    filter: '.description'
-  }
-  // classNames: {
-  //   block: 'sales'
-  // }
+    load: {
+      filter: '.description'
+    }
+    // classNames: {
+    //   block: 'sales'
+    // }
+  });
 });
+
 
 $('.slider__inner').slick({
   arrows: true,
@@ -58,10 +64,10 @@ $('.slider__inner').slick({
   prevArrow: '<button class="slider__arrow slider__arrow--prev"><svg width="20" height="32" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.9641 14.9851L2.95082 0.392105C2.42535 -0.130702 1.57314 -0.130702 1.04767 0.392105C0.522196 0.914872 0.522196 1.76312 1.04767 2.28593L16.0954 16L1.049 29.7141C0.523529 30.2369 0.523529 31.0852 1.049 31.6079C1.57448 32.1307 2.42668 32.1307 2.95212 31.6079L18.9654 17.0149C19.2455 16.7362 19.3656 16.3668 19.3469 16.0014C19.3643 15.6346 19.2443 15.2652 18.9641 14.9851Z" fill="#505050"/></svg></button>'
 });
 
-// $('.slider__inner--responsive').slick({
-//   dots: true,
-//   arrows: false
-// });
+$('.slider__inner--responsive').slick({
+  dots: true,
+  arrows: false
+});
 
 $('.product__slider').slick({
   arrows: true,
