@@ -78,6 +78,11 @@ $('.product__slider').slick({
     settings: {
       arrows: false,
       dots: true
+    },
+    breakpoint: 567,
+    settings: {
+      dots: false,
+      arrows: false
     }
   }]
 });

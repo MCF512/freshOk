@@ -532,6 +532,10 @@
   }
 }
 
+.slick-slide {
+  margin-left: -15px;
+}
+
 .catalog {
   position: relative;
   // &:hover .catalog__list {
@@ -2320,7 +2324,7 @@
 
   &__quantity {
     height: 44px;
-    padding: 0 17px;
+    padding: 0 22px;
     display: flex;
     align-items: center;
     background-color: $green-200;
@@ -2473,6 +2477,10 @@
       line-height: 1;
       margin-bottom: 48px;
       text-transform: uppercase;
+    }
+
+    &__items {
+      margin-bottom: 48px;
     }
 
     &__item {

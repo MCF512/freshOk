@@ -691,6 +691,10 @@
   .product {
     padding-bottom: 30px;
 
+    &__title {
+      font-size: 26px;
+    }
+
     &__inner {
 
       &--code {
@@ -719,6 +723,13 @@
 
     &__rating {
       flex-grow: 1;
+      // width: 260px;
+      padding-right: 50px;
+    }
+
+    &__avilable {
+      margin-left: 0;
+      padding-top: 18px;
     }
   }
 
@@ -736,12 +747,24 @@
 
     .feedback {
 
+      // &__title {
+      //   margin-bottom: 30px;
+      // }
+
+      &__items {
+        margin-bottom: 6px;
+      }
+
       &__form {
         grid-gap: 18px;
       }
 
       &__title {
-        margin-bottom: 12px;
+        margin-bottom: 6px;
+
+        &--rate {
+          margin-bottom: 30px;
+        }
       }
 
       textarea {
@@ -760,6 +783,7 @@
 
   .slick-slide {
     padding: 0 3px;
+    margin-left: 0;
   }
 
   .breadcrumbs {
